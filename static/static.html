@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Guideline Development Tool - printout</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style media="screen,print" type="text/css">
+    @font-face {
+      font-family: "GRADE-quality";
+      src: url();
+      src: url('http://www.guidelinedevelopment.org/fonts/GRADE-quality.eot');
+      src: url('http://www.guidelinedevelopment.org/fonts/GRADE-quality.eot?#iefix')
+          format('embedded-opentype'),
+        url('http://www.guidelinedevelopment.org/fonts/GRADE-quality.woff') format('woff'),
+        url('http://www.guidelinedevelopment.org/fonts/GRADE-quality.ttf') format('truetype'),
+        url('http://www.guidelinedevelopment.org/fonts/GRADE-quality.svg#GRADE-quality')
+          format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @media print {
+      @page {
+        size: portrait;
+
+
+
+
+      }
+    }
+
+    body {
+      -webkit-print-color-adjust:exact;
+      font: normal 8pt 'Arial Narrow', Arial, sans-serif;
+      font-stretch: condensed;
+      color: black;
+      padding:5px;
+      margin:0;
+    }
+
+    sup span.underline {
+      margin: 0;
+      padding: 0;
+      text-decoration: underline;
+    }
+
+    p {
+      margin: 0px;
+    }
+
+    ol {
+      padding-left:15px;
+    }
+
+    span.bold {
+      font-weight: bold;
+    }
+
+    span.cell-value.normal {
+      font-weight: normal;
+    }
+
+    span.cell-value.pt8 {
+      font-size: 8pt;
+    }
+
+    span.label,
+    span.cell {
+      font-weight: normal;
+    }
+
+    span.block.bold {
+      display: block;
+      font-weight: bold;
+    }
+
+    span.outcome-name {
+      font-size: 9pt;
+      margin-top: 5px;
+    }
+
+    span.cell-value {
+      min-height: 30px;
+      max-width: 250px;
+      font-size: 9pt;
+    }
+
+    span.short-name {
+      font-weight: normal;
+    }
+
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      font: normal 8pt 'Arial Narrow', Arial, sans-serif;
+      width: 100%;
+    }
+
+    thead, tfoot { display: table-row-group }
+
+    tr {
+      page-break-inside: avoid !important;
+    }
+
+    td {
+      text-align: left;
+      border-top: solid 1px black;
+      border-bottom: solid 1px black;
+      border-left: 0px;
+      border-right: 0px;
+      word-wrap: break-word;
+    }
+
+    th {
+      position: relative;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th.grey-cell {
+      border-top: 1px solid #efefef;
+      border-right: 1px solid #efefef;
+      background: #e0e0e0;
+    }
+
+    thead,
+    tbody {
+      border-bottom: solid 2px black;
+    }
+
+    .first-letter:first-letter {
+      text-transform: uppercase;
+     }
+
+    .blue-cell {
+      text-align: left;
+      color: #fff;
+      font-weight: normal;
+      background-color: #3271aa;
+      border-right: 1px solid #efefef;
+    }
+
+    .narrative-desc,
+    .corresponding-risk,
+    .grey-cell,
+    .control,
+    .absolute-effect {
+      vertical-align: top;
+      text-align: left;
+      background-color: #ebebeb;
+    }
+
+    .white-cell {
+      background-color: #ffffff;
+    }
+
+    td.title-cell{
+      border: none;
+    }
+
+    td.info-cell {
+      border-top: solid 2px black;
+      border-bottom: solid 2px black;
+      border-left: 0px;
+      border-right: 0px;
+    }
+
+    td.control-label {
+      background: #e0e0e0;
+      border-color: #000000;
+      font-weight: bold;
+    }
+
+    p.sof-title {
+      font-size: 11pt;
+    }
+
+    p span{
+      font-weight: normal;
+    }
+
+    .not-editable-cell,
+    .normal-font {
+      font-weight: normal;
+    }
+
+    .outcome-label-row {
+      border: none;
+    }
+    .outcome-edit-block {
+      display: none;
+    }
+    .outcomes-table .outcome-label span {
+      margin: 0px 5px;
+    }
+
+    td.outcome-cell,
+    td.relative-effect,
+    td.no-of-participants,
+    td.quality,
+    td.comments {
+      vertical-align: top;
+    }
+
+    td.outcome-cell,
+    td.control,
+    td.absolute-effect,
+    td.relative-effect {
+      font-weight: normal;
+    }
+
+    td.outcome-cell {
+      max-width: 220px;
+    }
+
+    td.quality {
+      width: 75px;
+    }
+
+    .cell-footnotes {
+      font-style: italic;
+      float: right;
+      padding: 2px;
+    }
+
+    .quality-sign {
+        font-family: 'GRADE-quality', Cambria, Helvetica, Arial;
+        font-size: 14px;
+    }
+
+    .control {
+      width: 12%
+    }
+    .with-intervention,
+    .without-intervention,
+    .difference,
+    .risk-difference-with-intervention,
+    .risk-with-control,
+    .corresponding-risk,
+    .relative-effect,
+    .no-of-participants {
+      width: 12%
+    }
+    .what_happens,
+    .comments {
+      width: 26%
+    }
+    .impact {
+      width: 36%
+    }
+
+  </style>
+</head>
+<body><table class="outcomes-table " valign="top" cellpadding="5" width="100%">
+  <thead>
+      <tr>
+        <td colspan="7" class="title-cell">
+          <b>Summary of findings: </b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="7" class="info-cell printout">
+        <p class="sof-title"><b>Organised mammography screening  compared to no mammography screening for early detection of breast cancer in women aged of 50 to 69</b></p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="7" class="info-cell question-data">
+        <div class="content">
+        <div>
+          <b>Patient or population</b>:
+          <label id="healthProblemOrPopulation">early detection of breast cancer in women aged of 50 to 69</label>
+          <span class="sup"></span>
+        </div>
+        <div>
+          <b>Setting</b>:
+          <label for="settings">European Union</label>
+          <span class="sup"></span>
+        </div>
+        <div>
+          <b>Intervention</b>:
+          <label id="intervention">organised mammography screening </label>
+        </div>
+        <div>
+          <b>Comparison</b>:
+          <label id="comparison">no mammography screening</label>
+        </div>
+
+
+
+
+
+  </div></td>
+      </tr>
+    <tr>
+      <th rowspan="2" class="blue-cell"><p>Outcomes</p></th>
+        <th colspan="2" class="grey-cell regular-header" style="display: table-cell;">
+          <p>
+            Anticipated absolute effects<sup>*</sup> <span>(95% CI)</span>
+          </p>
+        </th>
+        <th rowspan="2" class="blue-cell regular-header" style="display: table-cell;">
+          <p>
+            Relative effect<br>(95% CI)
+          </p>
+        </th>
+      <th rowspan="2" class="blue-cell">
+        <p>№ of participants <br>
+          (studies)
+        </p>
+      </th>
+      <th rowspan="2" class="blue-cell">
+        <p>
+          Quality of the evidence<br>(GRADE)
+        </p>
+      </th>
+        <th rowspan="2" class="comments blue-cell">
+          <p>Comments</p>
+        </th>
+    </tr>
+    <tr>
+        <th class="grey-cell regular-header" style="display: table-cell;">
+          <p class="first-letter">Risk with no mammography screening</p>
+        </th>
+        <th class="grey-cell regular-header" style="display: table-cell;">
+          <p class="first-letter">Risk with organised mammography screening </p>
+        </th>
+    </tr>
+  </thead>
+
+  <tbody class="printout-rows">
+
+  <tr data-view-cid="view12114" class="outcome-row outcome-sof-printout-row" data-item-cid="c12076"><td class="outcome-cell active" data-col-no="1" data-property="sofOutcomeLabel" rowspan="6">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Breast cancer mortality (short case accrual)<br>follow up: mean 18 years</span></span>
+  </div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content low-value-label">
+      <span>Low</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="6">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 0.76</b></span><br>(0.64 to 0.90)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="6">
+    <div class="cell-content">
+      <span>249160<br>(6 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="6">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><br>HIGH</span>
+    <sup data-footnote-number="1" data-footnote-id="1">a<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="16">c</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="6" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view12178" class="outcome-row outcome-sof-printout-row lowControl extra-item" data-item-cid="c12076">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content low-value">
+                  <span>600 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="15">d</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content low-value">
+              <span><span class="cell-value"> <b>456 per 100,000</b><br>(384 to 540)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view12306" class="outcome-row outcome-sof-printout-row moderateControlLabel extra-item" data-item-cid="c12076"><td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content moderate-value-label">
+      <span>Moderate</span>
+    </div>
+</td>
+
+</tr><tr data-view-cid="view12242" class="outcome-row outcome-sof-printout-row moderateControl extra-item" data-item-cid="c12076">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content moderate-value">
+                  <span>1,000 per 100,000</span>
+                </div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content moderate-value">
+              <span><span class="cell-value"> <b>760 per 100,000</b><br>(640 to 900)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view12434" class="outcome-row outcome-sof-printout-row highControlLabel extra-item" data-item-cid="c12076"><td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content high-value-label">
+      <span>High</span>
+    </div>
+</td>
+
+</tr><tr data-view-cid="view12370" class="outcome-row outcome-sof-printout-row highControl extra-item" data-item-cid="c12076">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content high-value">
+                  <span>2,100 per 100,000</span>
+                </div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content high-value">
+              <span><span class="cell-value"> <b>1596 per 100,000</b><br>(1,344 to 1,890)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view12498" class="outcome-row outcome-sof-printout-row" data-item-cid="c12077"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel" rowspan="2">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Breast cancer mortality (longest case accrual)<br>follow up: mean 17.3 years</span></span>
+  </div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content low-value-label">
+      <span>Low</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="2">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 0.78</b></span><br>(0.67 to 0.90)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="2">
+    <div class="cell-content">
+      <span>249491<br>(6 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="2">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><br>HIGH</span>
+    <sup data-footnote-number="1" data-footnote-id="1">a<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="16">c</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="2" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view12562" class="outcome-row outcome-sof-printout-row lowControl extra-item" data-item-cid="c12077">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content low-value">
+                  <span>760 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="23">e</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content low-value">
+              <span><span class="cell-value"> <b>593 per 100,000</b><br>(509 to 684)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view12626" class="outcome-row outcome-sof-printout-row" data-item-cid="c12078"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel" rowspan="2">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Breast cancer stage IIA or higher</span></span>
+  <sup data-footnote-number="1" data-footnote-id="21">f</sup></div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content moderate-value-label">
+      <span>Moderate</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="2">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 0.80</b></span><br>(0.64 to 1.00)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="2">
+    <div class="cell-content">
+      <span>297965<br>(4 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="2">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>VERY LOW</span>
+    <sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="7">g<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="11">h<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="4">i</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="2" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view12690" class="outcome-row outcome-sof-printout-row moderateControl extra-item" data-item-cid="c12078">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content moderate-value">
+                  <span>700 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="23">e</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content moderate-value">
+              <span><span class="cell-value"> <b>560 per 100,000</b><br>(448 to 700)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view12754" class="outcome-row outcome-sof-printout-row" data-item-cid="c12079"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel" rowspan="2">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Breast cancer stage III+ or tumour size ≥40 mm </span></span>
+  <sup data-footnote-number="1" data-footnote-id="21">f</sup></div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content low-value-label">
+      <span>Low</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="2">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 0.62</b></span><br>(0.48 to 0.80)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="2">
+    <div class="cell-content">
+      <span>170032<br>(3 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="2">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>LOW</span>
+    <sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="7">g</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="2" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view12818" class="outcome-row outcome-sof-printout-row lowControl extra-item" data-item-cid="c12079">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content low-value">
+                  <span>170 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="23">e</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content low-value">
+              <span><span class="cell-value"> <b>105 per 100,000</b><br>(82 to 136)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view12882" class="outcome-row outcome-sof-printout-row" data-item-cid="c12080"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel" rowspan="2">
+  <div class="cell-content">
+      <span><span class="label outcome-name">All-cause mortality<br>follow up: mean 9.6 years</span></span>
+  </div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content low-value-label">
+      <span>Low</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="2">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 0.98</b></span><br>(0.93 to 1.04)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="2">
+    <div class="cell-content">
+      <span>119083<br>(3 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="2">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>LOW</span>
+    <sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="4">i</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="2" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view12946" class="outcome-row outcome-sof-printout-row lowControl extra-item" data-item-cid="c12080">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content low-value">
+                  <span>7,000 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="23">e</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content low-value">
+              <span><span class="cell-value"> <b>6860 per 100,000</b><br>(6,510 to 7,280)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view13010" class="outcome-row outcome-sof-printout-row" data-item-cid="c12081"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel" rowspan="2">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Other cause mortality<br>follow up: mean 9.6 years</span></span>
+  </div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content low-value-label">
+      <span>Low</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="2">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 0.99</b></span><br>(0.95 to 1.04)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="2">
+    <div class="cell-content">
+      <span>119083<br>(3 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="2">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>LOW</span>
+    <sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="4">i</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="2" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view13074" class="outcome-row outcome-sof-printout-row lowControl extra-item" data-item-cid="c12081">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content low-value">
+                  <span>6,600 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="23">e</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content low-value">
+              <span><span class="cell-value"> <b>6534 per 100,000</b><br>(6,270 to 6,864)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view13138" class="outcome-row outcome-sof-printout-row" data-item-cid="c12082"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Overdiagnosis (long case accrual)</span></span>
+  </div>
+</td>
+
+        <td data-col-no="2" data-property="narrativeDesc" class="narrative-desc impact " colspan="2">
+  <div class="cell-content">
+    <span>10.1% (95% CI 8.6%-11.6%)
+
+    </span>
+  <sup data-footnote-number="1" data-footnote-id="18">j</sup></div>
+</td>
+
+        <td data-col-no="3" data-property="empty-property" class="empty-cell" colspan="1">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5">
+    <div class="cell-content">
+      <span>(2 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><br>MODERATE</span>
+    <sup data-footnote-number="1" data-footnote-id="3">b</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view13202" class="outcome-row outcome-sof-printout-row" data-item-cid="c12083"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel" rowspan="2">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Rate of mastectomies</span></span>
+  <sup data-footnote-number="1" data-footnote-id="21">f</sup></div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content low-value-label">
+      <span>Low</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="2">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 1.20</b></span><br>(1.11 to 1.30)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="2">
+    <div class="cell-content">
+      <span>145536<br>(5 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="2">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>LOW</span>
+    <sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="13">k</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="2" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view13266" class="outcome-row outcome-sof-printout-row lowControl extra-item" data-item-cid="c12083">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content low-value">
+                  <span>900 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="23">e</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content low-value">
+              <span><span class="cell-value"> <b>1080 per 100,000</b><br>(999 to 1,170)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view13330" class="outcome-row outcome-sof-printout-row" data-item-cid="c12084"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel" rowspan="2">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Provision of chemotheraphy</span></span>
+  <sup data-footnote-number="1" data-footnote-id="21">f</sup></div>
+</td>
+
+    <td data-col-no="2" data-property="control" class="control-label disabled-cell" colspan="2">
+    <div class="cell-content low-value-label">
+      <span>Low</span>
+    </div>
+</td>
+
+
+          <td data-col-no="4" data-property="relativeEffect" data-property-type="dich" class="relative-effect" rowspan="2">
+        <div class="cell-content">
+          <span><span class="cell"><span class="block"><b>RR 0.86</b></span><br>(0.52 to 1.41)</span></span>
+        </div>
+      </td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5" rowspan="2">
+    <div class="cell-content">
+      <span>60293<br>(2 RCTs)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell" rowspan="2">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>VERY LOW</span>
+    <sup data-footnote-number="1" data-footnote-id="3">b<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="4">i<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="14">l<span class="comma">,</span></sup><sup data-footnote-number="1" data-footnote-id="22">m</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" rowspan="2" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view13394" class="outcome-row outcome-sof-printout-row lowControl extra-item" data-item-cid="c12084">          <td data-col-no="2" data-property="riskWithControl" class="risk-with-control">
+              <div class="inner-cell dich">
+                <div class="cell-content low-value">
+                  <span>400 per 100,000</span>
+                <sup data-footnote-number="1" data-footnote-id="23">e</sup></div>
+              </div>
+          </td>
+
+      <td data-col-no="3" data-property="correspondingRisk" class="corresponding-risk">
+          <div class="inner-cell">
+            <div class="cell-content low-value">
+              <span><span class="cell-value"> <b>344 per 100,000</b><br>(208 to 564)</span></span>
+            </div>
+          </div>
+      </td>
+
+</tr><tr data-view-cid="view13458" class="outcome-row outcome-sof-printout-row" data-item-cid="c12085"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel">
+  <div class="cell-content">
+      <span><span class="label outcome-name">Quality of life (inferred from psychological effects)</span></span>
+  <sup data-footnote-number="1" data-footnote-id="21">f</sup></div>
+</td>
+
+        <td data-col-no="2" data-property="narrativeDesc" class="narrative-desc impact " colspan="2">
+  <div class="cell-content">
+    <span>Systematic review with 54 studies, no meta-analysis (Brett 2005). Mammographic screening does not appear to create anxiety in women who are given a clear result after a mammogram and subsequently placed on routine recall. Mixed results about anxiety in women recalled for further testing: several studies reported transient or long term anxiety (from 6 months to 1 year after recall) while other studies reported no differences in anxiety levels. The nature and extent of further testing seem to determine the extent of anxiety.
+
+
+
+
+
+    </span>
+  </div>
+</td>
+
+        <td data-col-no="3" data-property="empty-property" class="empty-cell" colspan="1">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5">
+    <div class="cell-content">
+      <span>(54 observational studies)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>LOW</span>
+    <sup data-footnote-number="1" data-footnote-id="20">n</sup></div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view13522" class="outcome-row outcome-sof-printout-row" data-item-cid="c12086"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel">
+  <div class="cell-content">
+      <span><span class="label outcome-name">False-positive related adverse effects (psychological distress)</span></span>
+  <sup data-footnote-number="1" data-footnote-id="21">f</sup></div>
+</td>
+
+        <td data-col-no="2" data-property="narrativeDesc" class="narrative-desc impact " colspan="2">
+  <div class="cell-content">
+    <span>RR of psychological distress in women with a false-positive mammogram was compared to those with a normal mammogram 35 months after the last assessment (age of women not specified): For women that needed further mammography: RR=1.28, 95%CI 0.82-2.00; For women placed in early recall: RR=1.82, 95%CI 1.22-2.72;  For women that needed a fine needle puncture aspiration: RR=1.80, 95%CI 1.17-2.77; For women that needed a biopsy: RR=2.07, 95%CI 1.22-3.52. No differences in generic measures of general anxiety and depression were observed at 6 weeks after assessment and 3 months after screening (Bond 2013).
+    </span>
+  </div>
+</td>
+
+        <td data-col-no="3" data-property="empty-property" class="empty-cell" colspan="1">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5">
+    <div class="cell-content">
+      <span>(7 observational studies)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>LOW</span>
+    </div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr><tr data-view-cid="view13586" class="outcome-row outcome-sof-printout-row" data-item-cid="c12087"><td class="outcome-cell" data-col-no="1" data-property="sofOutcomeLabel">
+  <div class="cell-content">
+      <span><span class="label outcome-name">False-positive related adverse effects (biopsies and surgeries)</span></span>
+  <sup data-footnote-number="1" data-footnote-id="21">f</sup></div>
+</td>
+
+        <td data-col-no="2" data-property="narrativeDesc" class="narrative-desc impact " colspan="2">
+  <div class="cell-content">
+    <span>Results from literature review (4 studies, 390 000 women aged 50 to 69) show an overall  false-positive screening result of 19.7% in women undergoing 10 biennial screening trests (pooled risk estimate based on 3 studies; range 8 - 21%). This includes 2.9% pooled cumulative risk of an invasive procedure with benign outcome (range 1.8% to 6.3% based on 2 studies) and 0.9% risk of undergoing surgical intervention with benign outcome (based on 1 study) (Hofvind 2012). Cross-sectional data from the EUNICE Project (women aged 50 to 69): 17 countries, 20 screening programmes,1.7 million initial screens, 5.9 million subsequent screens; showed that 2.2% and 1.1% of all screening examinations resulted in needle biopsy among women without breast cancer (initial and subsequent screens, respectively). 0.19% and 0.07% of all screening examinations resulted in surgical interventions among women without breast cancer  (initial and subsequent screens, respectively).
+
+
+
+
+
+
+
+    </span>
+  </div>
+</td>
+
+        <td data-col-no="3" data-property="empty-property" class="empty-cell" colspan="1">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+  <td class="no-of-participants" data-property="noOfParticipantsStudies" data-col-no="5">
+    <div class="cell-content">
+      <span>(4 observational studies)</span>
+    </div>
+  </td>
+
+  <td data-col-no="6" data-property="quality" class="quality not-editable-cell">
+    <div class="cell-content">
+      <span><span class="quality-sign">⨁</span><span class="quality-sign">⨁</span><span class="quality-sign">◯</span><span class="quality-sign">◯</span><br>LOW</span>
+    </div>
+  </td>
+
+    <td data-col-no="7" data-property="comments" class="comments" data-table-mode-visible="regular" style="display: table-cell;">
+  <div class="cell-content">
+    <span></span>
+  </div>
+</td>
+
+</tr></tbody>
+  <tbody>
+    <tr>
+      <td colspan="7">
+        *<b>The risk in the intervention group</b> (and its 95% confidence interval) is based on the assumed risk in the comparison group and the <b>relative effect</b> of the intervention (and its 95% CI).
+        <br>
+        <br>
+        <b>CI:</b> Confidence interval; <b>RR:</b> Risk ratio
+      </td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td colspan="7">
+        <b>GRADE Working Group grades of evidence</b><br> <b>High quality:</b> We are very confident that the true effect lies close to that of the estimate of the effect<br> <b>Moderate quality:</b> We are moderately confident in the effect estimate: The true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantially different<br><b>Low quality:</b> Our confidence in the effect estimate is limited: The true effect may be substantially different from the estimate of the effect<br><b>Very low quality:</b> We have very little confidence in the effect estimate: The true effect is likely to be substantially different from the estimate of effect
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <p>
+      </p><div>
+        <span>a. </span>
+        <span>Some studies used methods that would not be accepted for random allocation today. One study had non-blinded assessment of 'cause of death'.  The GDG felt that the CNBSS-2 possibly had issues with achieving prognostic balance. The GDG felt that lack of allocation concealment in this set of studies did not lead to high risk of bias. Given that lack of single trials driving the overall results and similarity in effect sizes (the test for subgroup differences - low vs high risk of bias trials - was non-significant) and overlapping confidence intervals (CIs), the risk of bias was rated as 'not serious'.</span>
+      </div>
+      <div>
+        <span>b. </span>
+        <span>Trials were conducted more than 20 years ago. Currently, women have higher adherence to breast cancer screening while quality control of screening and breast cancer care have improved.</span>
+      </div>
+      <div>
+        <span>c. </span>
+        <span>Despite concerns about indirectness from the trials, including the fact that the population age range of 40 to 74 is broader than the age range in this question, after considering evidence from contemporary non-randomised studies (Broeders 2012) the GDG decided not to downgrade the quality of evidence for indirectness.</span>
+      </div>
+      <div>
+        <span>d. </span>
+        <span>The GDG felt that baseline risks higher than 0.6% should be considered to evaluate absolute effects (Breast Cancer Screening, IARC Handbook of Cancer Prevention Volume 15)</span>
+      </div>
+      <div>
+        <span>e. </span>
+        <span>Median or mean of the control group of the included studies unless otherwise specified.</span>
+      </div>
+      <div>
+        <span>f. </span>
+        <span>Importance of the outcome was lowered from 'critical' to 'important' because the  members felt this outcome influenced neither the direction nor the strength of the recommendation.</span>
+      </div>
+      <div>
+        <span>g. </span>
+        <span>Non-blinded assessment of breast cancer stage is a serious concern. GDG members decided to downgrade to 'serious' for risk of bias.</span>
+      </div>
+      <div>
+        <span>h. </span>
+        <span>Unexplained inconsistency with statistical heterogeneity (I² = 70%, P = 0.02). While one study shows clear benefit,  in three studies the 95%CI does not exclude important benefit or harm. </span>
+      </div>
+      <div>
+        <span>i. </span>
+        <span>95%CI probably crosses the clinical decision threshold (as the CI is wide, a different clinical decision regarding the intervention may be taken depending on whether the lower or the higher limit is considered).</span>
+      </div>
+      <div>
+        <span>j. </span>
+        <span>Estimate from a meta-analysis of 2 trials (CNBSS-2 and Malmo I) in which women in the control group were not offered mammography screening at the end of the trial.  Excess cancers as a proportion of cancers diagnosed over whole follow-up period in women invited for screening (population perspective). Independent UK Panel on Breast Cancer Screening (2012).</span>
+      </div>
+      <div>
+        <span>k. </span>
+        <span>Observational studies do not confirm these results, instead they provide opposite results. </span>
+      </div>
+      <div>
+        <span>l. </span>
+        <span>Unexplained inconsistency with statistical heterogeneity (I² = 71%, P=0.06).</span>
+      </div>
+      <div>
+        <span>m. </span>
+        <span>Chemotherapy protocols and indications have significantly changed (e.g. node status was not determined in earlier studies).</span>
+      </div>
+      <div>
+        <span>n. </span>
+        <span>Unexplained inconsistency for variability in anxiety in the group of women recalled for further testing.</span>
+      </div>
+  <p></p>
+  <br>
+  References
+  <p>
+  </p>
+
+
+</body></html>
