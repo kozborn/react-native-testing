@@ -2,10 +2,10 @@ import React from "react";
 import { View, Text, StatusBar, WebView } from "react-native";
 import { StackNavigator } from "react-navigation";
 
-export default class OnetHtml extends React.Component {
+export default class SwapiHtml extends React.Component {
 
   static navigationOptions = {
-    title: 'Onet.pl',
+    title: 'SwapiHtml',
     header: {
       visible: false
     }
@@ -18,7 +18,7 @@ export default class OnetHtml extends React.Component {
   render() {
     // There can be only webview here, nothing else?
     return (<WebView
-        source={{uri: 'http://www.onet.pl/'}}
+        source={{uri: 'http://swapi.co/'}}
         style={{marginTop: 20}}
       />
     );

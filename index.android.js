@@ -12,7 +12,7 @@ import PeopleList from "./components/people/List";
 import PeopleDetails from "./components/people/Details";
 import StarshipsList from "./components/starships/List";
 import StarshipsDetails from "./components/starships/Details";
-import OnetHtml from "./components/OnetHtml";
+import SwapiHtml from "./components/SwapiHtml";
 import StaticHtml from "./components/StaticHtml";
 import StaticPDF from "./components/StaticPDF";
 
@@ -22,7 +22,7 @@ const SwapiProject = StackNavigator({
   PeopleDetails: { screen: PeopleDetails },
   StarshipsList: { screen: StarshipsList },
   StarshipsDetails: { screen: StarshipsDetails },
-  OnetHtml: { screen: OnetHtml },
+  SwapiHtml: { screen: SwapiHtml },
   StaticHtml: { screen: StaticHtml },
   StaticPDF: { screen: StaticPDF},
 });
