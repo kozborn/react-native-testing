@@ -1,15 +1,7 @@
 import React from "react";
 import { View, Text, StatusBar, WebView } from "react-native";
-import { StackNavigator } from "react-navigation";
 
 export default class StaticPDF extends React.Component {
-
-  static navigationOptions = {
-    title: 'Static PDF content',
-    header: {
-      visible: false
-    }
-  };
 
   componentDidMount() {
     StatusBar.setHidden(true);

@@ -25,7 +25,7 @@ export default class PeopleList extends React.Component {
   }
 
   renderPeople(person, index) {
-    const { navigate } = this.props.navigation;
+    const navigate = (path) => { console.log(path) }
     return (
       <TouchableOpacity
         key={`${person.name}-${index}`}

@@ -1,11 +1,13 @@
 import React from "react";
-import { Text, WebView } from "react-native";
+import WebView from "./WebView";
 
 export default class SwapiHtml extends React.Component {
 
   render() {
-    console.log("SwapiHTML")
     // There can be only webview here, nothing else?
-    return (<Text>Here should be WebView</Text>);
+    return (<WebView
+      src="http://onet.pl"
+      style={this.props.style}
+    />);
   }
 }
