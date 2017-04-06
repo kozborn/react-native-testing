@@ -1,13 +1,12 @@
 import React from "react";
-import WebView from "./WebView";
+import { View } from "react-native";
 
 export default class SwapiHtml extends React.Component {
 
   render() {
-    // There can be only webview here, nothing else?
-    return (<WebView
-      src="http://onet.pl"
-      style={this.props.style}
-    />);
+    return (
+      <View style={{height: "100%", width: "100%", overflowX: "hidden"}}>
+        <iframe src="http://onet.pl" width="100%" height="100%"/>
+      </View>);
   }
 }

@@ -3,8 +3,10 @@ import { View } from 'react-native';
 import {
   BrowserRouter as Router,
   Route,
+  Switch,
   Link
 } from 'react-router-dom'
+import createBrowserHistory from "history/createBrowserHistory";
 import MainPage from "./MainPage";
 import PeopleList from "./people/List";
 import PeopleDetails from "./people/Details";
@@ -14,19 +16,66 @@ import SwapiHtml from "./WebOnly/SwapiHtml";
 import StaticHtml from "./StaticHtml";
 import StaticPDF from "./StaticPDF";
 
-const App = () => (
-  <Router>
-    <View>
-      <Route path="/" component={MainPage} />
-      <Route path="/people-list" component={PeopleList} />
-      <Route path="/starships-list" component={StarshipsList} />
-      <Route path="/people-details" component={PeopleDetails} />
-      <Route path="/starships-details" component={StarshipsDetails} />
-      <Route path="/swapi-html" component={SwapiHtml} />
-      <Route path="/static-html" component={StaticHtml} />
-      <Route path="/static-pdf" component={StaticPDF} />
-    </View>
-  </Router>
+const history = createBrowserHistory();
+
+const navigation = {
+  navigate: (path) => history.push(path),
+}
+
+const routes = <Route path="/" render={() => <App navigation={navigation}/>} />;
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.getNavigation = this.getNavigation.bind(this);
+  }
+
+  // Based on Link from 'react-router'
+
+  static contextTypes = {
+    router: React.PropTypes.shape({
+      history: React.PropTypes.shape({
+        push: React.PropTypes.func.isRequired,
+        replace: React.PropTypes.func.isRequired,
+        createHref: React.PropTypes.func.isRequired
+      }).isRequired
+    }).isRequired
+  }
+
+  getNavigation(context) {
+    return {
+      navigate: (path, params = {}) => {
+        this.state = params;
+        console.log(this.state);
+        return this.context.router.history.push(path);
+      }
+    }
+  }
+
+  render() {
+    const navigation = this.getNavigation(this.context);
+    return (
+      <div>
+        <Switch>
+          <Route exact path="/" render={() => <MainPage navigation={navigation}/>} />
+          <Route path="/PeopleList" render={() => <PeopleList navigation={navigation}/>} />
+          <Route path="/StarshipsList" render={() => <StarshipsList navigation={navigation}/>} />
+          <Route path="/PeopleDetails" render={() => <PeopleDetails navigation={navigation}/>} />
+          <Route path="/StarshipsDetails" render={() => <StarshipsDetails navigation={navigation}/>} />
+          <Route path="/SwapiHtml" render={() => <SwapiHtml navigation={navigation}/>} />
+          <Route path="/StaticHtml" render={() => <StaticHtml navigation={navigation}/>} />
+          <Route path="/StaticPDF" render={() => <StaticPDF navigation={navigation}/>} />
+        </Switch>
+      </div>
+    )
+  }
+}
+
+
+
+const Root = () => (
+  <Router>{routes}</Router>
 )
 
-export default App;
+export default Root;

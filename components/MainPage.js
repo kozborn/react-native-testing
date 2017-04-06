@@ -11,7 +11,6 @@ export default class MainPage extends React.Component {
   };
 
   render(){
-
     const { navigate } = this.props.navigation;
 
     return (<ScrollView style={styles.pageContainer}>
@@ -69,7 +68,8 @@ const styles = StyleSheet.create({
     margin: 10
   },
   logo: {
-    flex: 1,
+    backgroundColor: "#000",
+    resizeMode: 'contain',
     height: 200
   },
   link: {

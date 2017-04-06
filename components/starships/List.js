@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, TouchableNativeFeedback, View, Text, StyleSheet } from "react-native";
+import { ScrollView, TouchableOpacity, View, Text, StyleSheet } from "react-native";
 
 export default class StarshipList extends React.Component {
 
@@ -28,7 +28,7 @@ export default class StarshipList extends React.Component {
     const { navigate } = this.props.navigation;
 
     return (
-      <TouchableNativeFeedback
+      <TouchableOpacity
         key={`${person.name}-${index}`}
         onPress={() => navigate('StarshipsDetails', {
           personName: person.name,
@@ -38,7 +38,7 @@ export default class StarshipList extends React.Component {
         <View style={styles.listItem}>
           <Text style={styles.name}>{person.name}</Text>
         </View>
-      </TouchableNativeFeedback>);
+      </TouchableOpacity>);
   }
 
   render() {

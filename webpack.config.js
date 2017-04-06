@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   devServer: {
-    contentBase: path.join(__dirname, 'web')
+    contentBase: "web"
   },
   entry: [
     path.join(__dirname, './index.web.js')
@@ -52,7 +52,6 @@ module.exports = {
   resolve: {
     alias: {
       'react-native': 'react-native-web',
-      'react-router-native': 'react-router-dom'
     }
   }
 };

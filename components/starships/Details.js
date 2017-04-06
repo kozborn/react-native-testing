@@ -16,6 +16,7 @@ export default class PeopleDetails extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.navigation);
     const { params } = this.props.navigation.state;
     const url = params.personUrl;
     fetch(params.personUrl)
