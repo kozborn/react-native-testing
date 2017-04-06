@@ -1,10 +1,10 @@
 import React from "react";
 import { ScrollView, TouchableNativeFeedback, View, Text, StyleSheet } from "react-native";
 
-export default class PeopleList extends React.Component {
+export default class StarshipList extends React.Component {
 
   static navigationOptions = {
-    title: 'People List',
+    title: 'Starships List',
   };
 
   constructor(props) {
@@ -26,6 +26,7 @@ export default class PeopleList extends React.Component {
 
   renderStarship(person, index) {
     const { navigate } = this.props.navigation;
+
     return (
       <TouchableNativeFeedback
         key={`${person.name}-${index}`}

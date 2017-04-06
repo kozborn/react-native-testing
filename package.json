@@ -10,10 +10,7 @@
   "dependencies": {
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.0",
-    "react-navigation": "git@github.com:react-community/react-navigation.git#master",
-    "react-router": "^4.0.0",
-    "react-router-dom": "^4.0.0",
-    "react-router-native": "^4.0.0"
+    "react-navigation": "git+ssh://git@github.com/react-community/react-navigation.git#master"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",

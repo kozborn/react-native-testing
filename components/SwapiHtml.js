@@ -1,11 +1,25 @@
 import React from "react";
-import { Text, WebView } from "react-native";
+import { StatusBar, WebView } from "react-native";
 
 export default class SwapiHtml extends React.Component {
 
+  static navigationOptions = {
+    title: 'SwapiHtml',
+    header: {
+      visible: false
+    }
+  };
+
+  componentDidMount() {
+    StatusBar.setHidden(true);
+  }
+
   render() {
-    console.log("SwapiHTML")
     // There can be only webview here, nothing else?
-    return (<Text>Here should be WebView</Text>);
+    return (<WebView
+        source={{uri: 'http://swapi.co/'}}
+        style={{marginTop: 20}}
+      />
+    );
   }
 }

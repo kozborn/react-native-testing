@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "react-router-native";
 import { Image, Text, TouchableOpacity, ScrollView, View, StyleSheet } from "react-native";
 
 export default class MainPage extends React.Component {
 
+  static navigationOptions = {
+    title: 'Starships List',
+    header: {
+      visible: false
+    }
+  };
+
   render(){
 
-    const navigate = (path) => {
-      console.log(path);
-    }
+    const { navigate } = this.props.navigation;
 
     return (<ScrollView style={styles.pageContainer}>
       <Image
@@ -20,9 +24,7 @@ export default class MainPage extends React.Component {
         onPress={() => navigate('PeopleList')}
       >
         <View style={styles.linkContainer}>
-          <Link to="people-list">
-            <Text style={styles.link}>People List</Text>
-          </Link>
+          <Text style={styles.link}>People List</Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity
@@ -30,21 +32,17 @@ export default class MainPage extends React.Component {
         onPress={() => navigate('StarshipsList')}
       >
         <View style={styles.linkContainer}>
-          <Link to="starships-list">
-            <Text style={styles.link}>Starships List</Text>
-          </Link>
+          <Text style={styles.link}>Starships List</Text>
         </View>
       </TouchableOpacity>
-      <View style={styles.linkContainer}>
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() => navigate('SwapiHtml')}
         >
-          <Link to="swapi-html">
-            <Text style={styles.link}>Swapi HTML</Text>
-          </Link>
-        </TouchableOpacity>
-      </View>
+        <View style={styles.linkContainer}>
+          <Text style={styles.link}>Swapi HTML</Text>
+        </View>
+      </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.5}
         onPress={() => navigate('StaticHtml')}

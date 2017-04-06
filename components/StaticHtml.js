@@ -1,7 +1,14 @@
 import React from "react";
-import { View, Text, StatusBar, WebView } from "react-native";
+import { StatusBar, WebView } from "react-native";
 
 export default class StaticHtml extends React.Component {
+
+  static navigationOptions = {
+    title: 'SoF',
+    header: {
+      visible: false
+    }
+  };
 
   componentDidMount() {
     StatusBar.setHidden(true);
