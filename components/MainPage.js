@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableNativeFeedback, ScrollView, View, StyleSheet } from "react-native";
+import { Image, Text, TouchableOpacity, ScrollView, View, StyleSheet } from "react-native";
 
 export default class MainPage extends React.Component {
 
@@ -19,43 +19,46 @@ export default class MainPage extends React.Component {
         style={styles.logo}
         source={{uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1280px-Star_Wars_Logo.svg.png'}}
       />
-      <TouchableNativeFeedback
+      <TouchableOpacity
+        activeOpacity={0.5}
         onPress={() => navigate('PeopleList')}
-        style={styles.link}
-        title="People List"
       >
         <View style={styles.linkContainer}>
           <Text style={styles.link}>People List</Text>
         </View>
-      </TouchableNativeFeedback>
-      <TouchableNativeFeedback
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.5}
         onPress={() => navigate('StarshipsList')}
       >
         <View style={styles.linkContainer}>
           <Text style={styles.link}>Starships List</Text>
         </View>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
       <View style={styles.linkContainer}>
-        <TouchableNativeFeedback
+        <TouchableOpacity
+          activeOpacity={0.5}
           onPress={() => navigate('SwapiHtml')}
         >
           <Text style={styles.link}>Swapi HTML</Text>
-        </TouchableNativeFeedback>
+        </TouchableOpacity>
       </View>
-      <TouchableNativeFeedback
+      <TouchableOpacity
+        activeOpacity={0.5}
         onPress={() => navigate('StaticHtml')}
       >
         <View style={styles.linkContainer}>
           <Text style={styles.link}>Static HTML content</Text>
         </View>
-      </TouchableNativeFeedback>
-      <TouchableNativeFeedback
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.5}
         onPress={() => navigate('StaticPDF')}
       >
         <View style={styles.linkContainer}>
           <Text style={styles.link}>Static PDF</Text>
         </View>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
     </ScrollView>);
   }
 }

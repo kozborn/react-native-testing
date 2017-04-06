@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, TouchableNativeFeedback, View, Text, StyleSheet } from "react-native";
+import { ScrollView, TouchableOpacity, View, Text, StyleSheet } from "react-native";
 
 export default class PeopleList extends React.Component {
 
@@ -27,7 +27,7 @@ export default class PeopleList extends React.Component {
   renderPeople(person, index) {
     const { navigate } = this.props.navigation;
     return (
-      <TouchableNativeFeedback
+      <TouchableOpacity
         key={`${person.name}-${index}`}
         onPress={() => navigate('PeopleDetails', {
           personName: person.name,
@@ -39,7 +39,7 @@ export default class PeopleList extends React.Component {
           <Text>{person.gender}</Text>
           <Text>{person.height}</Text>
         </View>
-      </TouchableNativeFeedback>);
+      </TouchableOpacity>);
   }
 
   render() {
