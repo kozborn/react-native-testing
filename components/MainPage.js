@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, ScrollView, View, StyleSheet } from "react-native";
+import SplashScreen from 'react-native-splash-screen'
 
 export default class MainPage extends React.Component {
 
@@ -9,6 +10,12 @@ export default class MainPage extends React.Component {
       visible: false
     }
   };
+
+  componentDidMount() {
+    if(SplashScreen) {
+      SplashScreen.hide();
+    }
+  }
 
   render(){
     const { navigate } = this.props.navigation;

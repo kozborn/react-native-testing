@@ -26,7 +26,7 @@ module.exports = {
         query: { cacheDirectory: true }
       },
       {
-        test: /\.(gif|jpe?g|png|svg)$/,
+        test: /\.(pdf|gif|jpe?g|png|svg)$/,
         loader: 'url-loader',
         query: { name: '[name].[hash:16].[ext]' }
       },

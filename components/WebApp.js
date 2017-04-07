@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import {
   BrowserRouter as Router,
   Route,
@@ -13,8 +13,8 @@ import PeopleDetails from "./people/Details";
 import StarshipsList from "./starships/List";
 import StarshipsDetails from "./starships/Details";
 import SwapiHtml from "./WebOnly/SwapiHtml";
-import StaticHtml from "./StaticHtml";
-import StaticPDF from "./StaticPDF";
+import StaticHtml from "./WebOnly/StaticHtml";
+import StaticPDF from "./WebOnly/StaticPDF";
 
 const history = createBrowserHistory();
 
@@ -47,7 +47,6 @@ class App extends React.Component {
     return {
       navigate: (path, params = {}) => {
         this.state = params;
-        console.log(this.state);
         return this.context.router.history.push(path);
       }
     }
@@ -56,7 +55,7 @@ class App extends React.Component {
   render() {
     const navigation = this.getNavigation(this.context);
     return (
-      <div>
+      <div style={{height: "100%"}}>
         <Switch>
           <Route exact path="/" render={() => <MainPage navigation={navigation}/>} />
           <Route path="/PeopleList" render={() => <PeopleList navigation={navigation}/>} />
@@ -71,8 +70,6 @@ class App extends React.Component {
     )
   }
 }
-
-
 
 const Root = () => (
   <Router>{routes}</Router>

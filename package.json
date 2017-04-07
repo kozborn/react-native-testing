@@ -8,11 +8,15 @@
     "dev": "webpack-dev-server --port 3000 --config webpack.config.js --inline --hot --colors --quiet"
   },
   "dependencies": {
+    "file-loader": "^0.11.1",
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.0",
+    "react-native-splash-screen": "^2.0.0",
     "react-navigation": "git+ssh://git@github.com/react-community/react-navigation.git#master",
+    "react-pdf": "^1.6.1",
     "react-router": "^4.0.0",
-    "react-router-dom": "^4.0.0"
+    "react-router-dom": "^4.0.0",
+    "url-loader": "^0.5.8"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
